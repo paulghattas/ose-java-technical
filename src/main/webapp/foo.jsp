@@ -60,11 +60,11 @@
         <h1>Welcome to an OpenShift Application!</h1>
         <p>The purpose of this application is to demonstrate several interesting features about OpenShift. We hope you enjoy it</p>
         <h2>Application Information</h2>
-        <% Map map = System.getenv(); %>
+        <% String variable = System.getenv("OPENSHIFT_APP_UUID"); %>
         <table>
           <tr>
-            <td>App Instance UUID</td>
-            <td><%= System.out.println(map.get("OPENSHIFT_APP_UUID") + ""); %></td>
+            <td>App UUID</td>
+            <td><%= System.out.println(variable); %></td>
           </tr>
         </table>
       </div>
