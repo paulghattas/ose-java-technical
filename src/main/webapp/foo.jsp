@@ -44,5 +44,13 @@
           <img src="../dist/img/brand.svg" alt="PatternFly" />
         </a>
       </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-primary">
+          <li class="active">
+            <a href="#">Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </body>
 </html>
