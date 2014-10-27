@@ -97,7 +97,7 @@
     <script type="text/javascript">
 
 	$(function() {
-		updateInterval = 2;
+		updateInterval = 1;
 		totalPoints = 600;
 
 		//http://stackoverflow.com/questions/7837456/comparing-two-arrays-in-javascript
@@ -135,7 +135,7 @@
 			this.url = url;
 			this.backoff = 30; //secs
 			this.state = {
-				roof:        20,
+				roof:        10,
 				enabled:     false,
 				startDate:   TimestampNow(),
 				needRefresh: true,
@@ -425,8 +425,8 @@
 	      <span style="float: right">
 	        Refresh rate:
 	        <select id="updateInterval" style="margin: 5px">
-	          <option value="1">1</option>
-	          <option value="2" selected>2</option>
+	          <option value="1" selected>1</option>
+	          <option value="2">2</option>
 	          <option value="5">5</option>
 	          <option value="10">10</option>
 	          <option value="20">20</option>
