@@ -219,6 +219,7 @@
 						return;
 
 					var gear = this.getGear(fields[1]);
+                                        console.log('field 4: ' + y);
 					var y = parseFloat(fields[4]);
 					if (y < 0) {
 						y = 0;
