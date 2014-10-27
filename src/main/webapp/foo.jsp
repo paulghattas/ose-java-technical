@@ -61,10 +61,21 @@
         <p>The purpose of this application is to demonstrate several interesting features about OpenShift. We hope you enjoy it</p>
         <h2>Application Information</h2>
         <% String variable = System.getenv("OPENSHIFT_APP_UUID"); %>
-        <table>
+        <table class="table table-striped table-bordered table-hover">
           <tr>
-            <td>App UUID</td>
-            <td><%= System.getenv("OPENSHIFT_APP_UUID") %></td>
+            <th>Env Var</th>
+            <th>Value</th>
+          <tr>
+            <td>Instance UUID</td>
+            <td><%= System.getenv("OPENSHIFT_GEAR_UUID") %></td>
+          </tr>
+          <tr>
+            <td>Instance Int IP</td>
+            <td><%= System.getenv("OPENSHIFT_JBOSSEAP_IP") %></td>
+          </tr>
+          <tr>
+            <td>Instance Int Port</td>
+            <td><%= System.getenv("OPENSHIFT_JBOSSEAP_HTTP_PORT") %></td>
           </tr>
         </table>
       </div>
