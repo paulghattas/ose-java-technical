@@ -5,6 +5,9 @@
 <html>
 <!--<![endif]-->
   <head>
+    <%@ page import="javax.servlet.http.HttpUtils,java.util.Enumeration" %>
+    <%@ page import="java.lang.management.*" %>
+    <%@ page import="java.util.*" %>
     <title>Form - PatternFly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../dist/img/favicon.ico">
@@ -52,5 +55,19 @@
         </ul>
       </div>
     </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <h1>Welcome to an OpenShift Application!</h1>
+        <p>The purpose of this application is to demonstrate several interesting features about OpenShift. We hope you enjoy it</p>
+        <h2>Application Information</h2>
+        <% Map map = System.getenv(); %>
+        <table>
+          <tr>
+            <td>App Instance UUID</td>
+            <td><%= System.out.println(map.get(OPENSHIFT_APP_UUID)); %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </body>
 </html>
