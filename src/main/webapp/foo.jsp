@@ -220,7 +220,7 @@
 
 					var gear = this.getGear(fields[1]);
 					var y = parseFloat(fields[4]);
-                                        console.log('field 4: ' + y);
+                                        console.log(fields);
 					if (y < 0) {
 						y = 0;
 					} else if (y > this.state.roof) {
