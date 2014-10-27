@@ -64,7 +64,7 @@
         <table>
           <tr>
             <td>App UUID</td>
-            <td><%= System.getenv("OPENSHIFT_APP_UUID"); %></td>
+            <td><%= System.getenv("OPENSHIFT_APP_UUID") %></td>
           </tr>
         </table>
       </div>
