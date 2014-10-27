@@ -88,7 +88,8 @@
               </tr>
               <tr>
                 <td>Instance Memory (Used)</td>
-                <td><%= Runtime.getRuntime().totalMemory() %></td>
+                <% int mb = 1024*1024; %>
+                <td><%= (Runtime.getRuntime().totalMemory()) / mb %></td>
               </tr>
               <tr>
                 <td>Node (header)</td>
