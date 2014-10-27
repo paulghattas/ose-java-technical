@@ -57,27 +57,38 @@
     </nav>
     <div class="container-fluid">
       <div class="row">
-        <h1>Welcome to an OpenShift Application!</h1>
-        <p>The purpose of this application is to demonstrate several interesting features about OpenShift. We hope you enjoy it</p>
-        <h2>Application Information</h2>
-        <% String variable = System.getenv("OPENSHIFT_APP_UUID"); %>
-        <table class="table table-striped table-bordered table-hover">
-          <tr>
-            <th>Env Var</th>
-            <th>Value</th>
-          <tr>
-            <td>Instance UUID</td>
-            <td><%= System.getenv("OPENSHIFT_GEAR_UUID") %></td>
-          </tr>
-          <tr>
-            <td>Instance Int IP</td>
-            <td><%= System.getenv("OPENSHIFT_JBOSSEAP_IP") %></td>
-          </tr>
-          <tr>
-            <td>Instance Int Port</td>
-            <td><%= System.getenv("OPENSHIFT_JBOSSEAP_HTTP_PORT") %></td>
-          </tr>
-        </table>
+        <div class="col-md-12">
+          <h1>Welcome to an OpenShift Application!</h1>
+          <p>The purpose of this application is to demonstrate several interesting features about OpenShift. We hope you enjoy it</p>
+          <h2>Application Information</h2>
+          <% String variable = System.getenv("OPENSHIFT_APP_UUID"); %>
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Env Var</th>
+                <th>Value</th>
+              <tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Instance UUID</td>
+                <td><%= System.getenv("OPENSHIFT_GEAR_UUID") %></td>
+              </tr>
+              <tr>
+                <td>Instance Int IP</td>
+                <td><%= System.getenv("OPENSHIFT_JBOSSEAP_IP") %></td>
+              </tr>
+              <tr>
+                <td>Instance Int Port</td>
+                <td><%= System.getenv("OPENSHIFT_JBOSSEAP_HTTP_PORT") %></td>
+              </tr>
+              <tr>
+                <td>Node (header)</td>
+                <td><%= request.getHeader("x-forwarded-server") %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>
