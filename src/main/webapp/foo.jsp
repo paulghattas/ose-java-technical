@@ -88,7 +88,7 @@
               </tr>
               <tr>
                 <td>Instance Memory (Used)</td>
-                <td><%= java.lang.Runtime.totalMemory() %></td>
+                <td><%= Runtime.getRuntime().totalMemory() %></td>
               </tr>
               <tr>
                 <td>Node (header)</td>
