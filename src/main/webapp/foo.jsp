@@ -32,6 +32,17 @@
     </script>
   </head>
   <body>
-    <p>foo</p>
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img src="../dist/img/brand.svg" alt="PatternFly" />
+        </a>
+      </div>
   </body>
 </html>
