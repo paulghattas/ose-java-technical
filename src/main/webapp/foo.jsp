@@ -64,7 +64,7 @@
         <table>
           <tr>
             <td>App Instance UUID</td>
-            <td><%= System.out.println(map.get(OPENSHIFT_APP_UUID)); %></td>
+            <td><%= System.out.println(map.get("OPENSHIFT_APP_UUID")); %></td>
           </tr>
         </table>
       </div>
