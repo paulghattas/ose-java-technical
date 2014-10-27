@@ -407,35 +407,37 @@
         </div>
       </div>
       <div class="row" id="proxy-status">
-        <h2>HAProxy Status</h2>
-	<div id="header">
-	  <h2>Real-time haproxy status</h2>
-	  <h3 id="hostname"></h3>
-	</div>
-	<div id="content">
-	  <div class="container">
-	  	<div id="placeholder" class="placeholder"></div>
+        <div class="col-md-6">
+          <h2>HAProxy Status</h2>
+	  <div id="header">
+	    <h2>Real-time haproxy status</h2>
+	    <h3 id="hostname"></h3>
 	  </div>
-	  <div class="control-group">
-	    <span>
-	      <button id="toggle" class="on" value="on">ON</button>
-	    </span>
-	    <span style="float: right">
-	      Refresh rate:
-	      <select id="updateInterval" style="margin: 5px">
-	        <option value="1">1</option>
-	        <option value="2" selected>2</option>
-	        <option value="5">5</option>
-	        <option value="10">10</option>
-	        <option value="20">20</option>
-	        <option value="30">30</option>
-	        <option value="60">60</option>
-	        <option value="120">120</option>
-	      </select>
-	      seconds
-	    </span>
-          </div>
-	</div>
+	  <div id="content">
+	    <div class="container">
+	    	<div id="placeholder" class="placeholder"></div>
+	    </div>
+	    <div class="control-group">
+	      <span>
+	        <button id="toggle" class="on" value="on">ON</button>
+	      </span>
+	      <span style="float: right">
+	        Refresh rate:
+	        <select id="updateInterval" style="margin: 5px">
+	          <option value="1">1</option>
+	          <option value="2" selected>2</option>
+	          <option value="5">5</option>
+	          <option value="10">10</option>
+	          <option value="20">20</option>
+	          <option value="30">30</option>
+	          <option value="60">60</option>
+	          <option value="120">120</option>
+	        </select>
+	        seconds
+	      </span>
+            </div>
+	  </div>
+        </div>
       </div>
     </div>
   </body>
