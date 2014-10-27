@@ -16,6 +16,64 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../dist/img/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../dist/img/apple-touch-icon-57-precomposed.png">
     <link href="../dist/css/patternfly.css" rel="stylesheet" media="screen, print">
+    <style>
+      #proxy-status .container {
+      	box-sizing: border-box;
+      	width: 850px;
+      	height: 450px;
+      	padding: 20px 15px 15px 15px;
+      	margin: 15px auto 30px auto;
+      	border: 1px solid #ddd;
+      	background: #fff;
+      	background: linear-gradient(#f6f6f6 0, #fff 50px);
+      	background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
+      	background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
+      	background: -moz-linear-gradient(#f6f6f6 0, #fff 50px);
+      	background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
+      	box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      	-o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      	-ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      	-moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      	-webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      }
+      
+      #proxy-status .placeholder {
+      	width: 100%;
+      	height: 100%;
+      	font-size: 14px;
+      	line-height: 1.2em;
+      }
+      
+      #proxy-status .legend table {
+      	border-spacing: 5px;
+      }
+      
+      #proxy-status .control-group {
+      	padding: 0px 15px;
+      }
+      
+      #proxy-status #hostname.failed {
+      	color: red;
+      }
+      
+      #proxy-status button#toggle {
+      	width: 100px;
+      	height: 35px;
+      }
+      
+      #proxy-status button {
+      	color: white;
+      	font-weight: bold;
+      }
+      
+      #proxy-status button.on {
+      	background-color: green;
+      }
+      
+      #proxy-status button.off {
+      	background-color: red;
+      }
+    </style>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="../components/html5shiv/dist/html5shiv.min.js"></script>
@@ -348,7 +406,7 @@
           </table>
         </div>
       </div>
-      <div class="row">
+      <div class="row" id="proxy-status">
         <h2>HAProxy Status</h2>
 	<div id="header">
 	  <h2>Real-time haproxy status</h2>
