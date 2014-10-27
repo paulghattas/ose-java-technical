@@ -367,6 +367,10 @@
         <div class="col-md-12">
           <h1>Welcome to an OpenShift Application!</h1>
           <p>The purpose of this application is to demonstrate several interesting features about OpenShift. We hope you enjoy it!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
           <h2>Application Information</h2>
           <% String variable = System.getenv("OPENSHIFT_APP_UUID"); %>
           <table class="table table-striped table-bordered table-hover">
@@ -407,12 +411,9 @@
         </div>
       </div>
       <div class="row" id="proxy-status">
-        <div class="col-md-6">
+        <div class="col-md-6 col-md-offset-3">
           <h2>HAProxy Status</h2>
-	  <div id="header">
-	    <h2>Real-time haproxy status</h2>
-	    <h3 id="hostname"></h3>
-	  </div>
+	  <h3 id="hostname"></h3>
 	  <div id="content">
 	    <div class="container">
 	    	<div id="placeholder" class="placeholder"></div>
