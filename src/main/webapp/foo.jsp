@@ -8,7 +8,7 @@
     <%@ page import="javax.servlet.http.HttpUtils,java.util.Enumeration" %>
     <%@ page import="java.lang.management.*" %>
     <%@ page import="java.util.*" %>
-    <title>Form - PatternFly</title>
+    <title>JBoss EAP - Powered by OpenShift</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../dist/img/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../dist/img/apple-touch-icon-144-precomposed.png">
@@ -349,37 +349,35 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12">
-          <h2>HAProxy Status</h2>
-	  <div id="header">
-	    <h2>Real-time haproxy status</h2>
-	    <h3 id="hostname"></h3>
+        <h2>HAProxy Status</h2>
+	<div id="header">
+	  <h2>Real-time haproxy status</h2>
+	  <h3 id="hostname"></h3>
+	</div>
+	<div id="content">
+	  <div class="container">
+	  	<div id="placeholder" class="placeholder"></div>
 	  </div>
-	  <div id="content">
-	    <div class="container">
-	    	<div id="placeholder" class="placeholder"></div>
-	    </div>
-	    <div class="control-group">
-	      <span>
-	        <button id="toggle" class="on" value="on">ON</button>
-	      </span>
-	      <span style="float: right">
-	        Refresh rate:
-	        <select id="updateInterval" style="margin: 5px">
-	          <option value="1">1</option>
-	          <option value="2" selected>2</option>
-	          <option value="5">5</option>
-	          <option value="10">10</option>
-	          <option value="20">20</option>
-	          <option value="30">30</option>
-	          <option value="60">60</option>
-	          <option value="120">120</option>
-	        </select>
-	        seconds
-	      </span>
-            </div>
-	  </div>
-        </div>
+	  <div class="control-group">
+	    <span>
+	      <button id="toggle" class="on" value="on">ON</button>
+	    </span>
+	    <span style="float: right">
+	      Refresh rate:
+	      <select id="updateInterval" style="margin: 5px">
+	        <option value="1">1</option>
+	        <option value="2" selected>2</option>
+	        <option value="5">5</option>
+	        <option value="10">10</option>
+	        <option value="20">20</option>
+	        <option value="30">30</option>
+	        <option value="60">60</option>
+	        <option value="120">120</option>
+	      </select>
+	      seconds
+	    </span>
+          </div>
+	</div>
       </div>
     </div>
   </body>
