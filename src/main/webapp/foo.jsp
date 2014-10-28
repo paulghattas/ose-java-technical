@@ -78,10 +78,10 @@
                   </a>
                 </h2>
               </div>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-                Inside the panel!
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  Inside the panel!
+                </div>
               </div>
             </div>
           </div>
