@@ -80,46 +80,45 @@
               </div>
               <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
-                  Inside the panel!
+                  <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>Env Var</th>
+                        <th>Value</th>
+                      <tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Instance UUID</td>
+                        <td><%= System.getenv("OPENSHIFT_GEAR_UUID") %></td>
+                      </tr>
+                      <tr>
+                        <td>Instance Internal IP</td>
+                        <td><%= System.getenv("OPENSHIFT_JBOSSEAP_IP") %></td>
+                      </tr>
+                      <tr>
+                        <td>Instance Internal Port</td>
+                        <td><%= System.getenv("OPENSHIFT_JBOSSEAP_HTTP_PORT") %></td>
+                      </tr>
+                      <tr>
+                        <td>Instance Memory (Allowed [MB])</td>
+                        <td><%= System.getenv("OPENSHIFT_GEAR_MEMORY_MB") %></td>
+                      </tr>
+                      <tr>
+                        <td>Instance Memory (Used [MB])</td>
+                        <% int mb = 1024*1024; %>
+                        <td><%= (Runtime.getRuntime().totalMemory()) / mb %></td>
+                      </tr>
+                      <tr>
+                        <td>Node (header)</td>
+                        <td><%= request.getHeader("x-forwarded-server") %></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
-          <table class="table table-striped table-bordered table-hover">
-            <thead>
-              <tr>
-                <th>Env Var</th>
-                <th>Value</th>
-              <tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Instance UUID</td>
-                <td><%= System.getenv("OPENSHIFT_GEAR_UUID") %></td>
-              </tr>
-              <tr>
-                <td>Instance Internal IP</td>
-                <td><%= System.getenv("OPENSHIFT_JBOSSEAP_IP") %></td>
-              </tr>
-              <tr>
-                <td>Instance Internal Port</td>
-                <td><%= System.getenv("OPENSHIFT_JBOSSEAP_HTTP_PORT") %></td>
-              </tr>
-              <tr>
-                <td>Instance Memory (Allowed [MB])</td>
-                <td><%= System.getenv("OPENSHIFT_GEAR_MEMORY_MB") %></td>
-              </tr>
-              <tr>
-                <td>Instance Memory (Used [MB])</td>
-                <% int mb = 1024*1024; %>
-                <td><%= (Runtime.getRuntime().totalMemory()) / mb %></td>
-              </tr>
-              <tr>
-                <td>Node (header)</td>
-                <td><%= request.getHeader("x-forwarded-server") %></td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
       <div class="row" id="proxy-status">
