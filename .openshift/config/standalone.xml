@@ -368,7 +368,6 @@
                     <netty-connector name="netty-throughput" socket-binding="messaging-throughput">
                         <param key="batch-delay" value="50"/>
                     </netty-connector>
-
 					<in-vm-connector name="in-vm" server-id="0" />
 				</connectors>
 				<acceptors>
