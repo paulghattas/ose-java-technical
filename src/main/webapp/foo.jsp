@@ -62,7 +62,7 @@
     </nav>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 col-md-offset-3">
           <h1>Welcome to an OpenShift Application!</h1>
           <p>The purpose of this application is to demonstrate several interesting features about OpenShift. We hope you enjoy it!</p>
         </div>
@@ -73,12 +73,12 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h2 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#appinfo">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                     Application Information
                   </a>
                 </h2>
               </div>
-              <div id="appinfo" class="panel-collapse collapse in">
+              <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
                   <table class="table table-striped table-bordered table-hover">
                     <thead>
@@ -118,98 +118,37 @@
                 </div>
               </div>
             </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h2 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#proxystatus">
-                    Application Information
-                  </a>
-                </h2>
-              </div>
-              <div id="proxystatus" class="panel-collapse collapse in">
-                <div class="panel-body">
-	          <h3 id="hostname"></h3>
-	          <div id="content">
-	            <div class="container">
-	            	<div id="placeholder" class="placeholder"></div>
-	            </div>
-	            <div class="control-group">
-	              <span>
-	                <button id="toggle" class="on" value="on">ON</button>
-	              </span>
-	              <span style="float: right">
-	                Refresh rate:
-	                <select id="updateInterval" style="margin: 5px">
-	                  <option value="1">1</option>
-	                  <option value="2" selected>2</option>
-	                  <option value="5">5</option>
-	                  <option value="10">10</option>
-	                  <option value="20">20</option>
-	                  <option value="30">30</option>
-	                  <option value="60">60</option>
-	                  <option value="120">120</option>
-	                </select>
-	                seconds
-	              </span>
-                    </div>
-	          </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div class="row" id="proxy-status">
         <div class="col-md-6 col-md-offset-3">
           <h2>HAProxy Status</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                    Collapsible Group Item #1
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
+	  <h3 id="hostname"></h3>
+	  <div id="content">
+	    <div class="container">
+	    	<div id="placeholder" class="placeholder"></div>
+	    </div>
+	    <div class="control-group">
+	      <span>
+	        <button id="toggle" class="on" value="on">ON</button>
+	      </span>
+	      <span style="float: right">
+	        Refresh rate:
+	        <select id="updateInterval" style="margin: 5px">
+	          <option value="1">1</option>
+	          <option value="2" selected>2</option>
+	          <option value="5">5</option>
+	          <option value="10">10</option>
+	          <option value="20">20</option>
+	          <option value="30">30</option>
+	          <option value="60">60</option>
+	          <option value="120">120</option>
+	        </select>
+	        seconds
+	      </span>
             </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                    Collapsible Group Item #2
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                    Collapsible Group Item #3
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-          </div>
+	  </div>
         </div>
       </div>
     </div>
