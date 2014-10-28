@@ -73,12 +73,12 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h2 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#appinfo">
                     Application Information
                   </a>
                 </h2>
               </div>
-              <div id="collapseOne" class="panel-collapse collapse in">
+              <div id="appinfo" class="panel-collapse collapse in">
                 <div class="panel-body">
                   <table class="table table-striped table-bordered table-hover">
                     <thead>
@@ -118,37 +118,50 @@
                 </div>
               </div>
             </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#proxystatus">
+                    Application Information
+                  </a>
+                </h2>
+              </div>
+              <div id="proxystatus" class="panel-collapse collapse in">
+                <div class="panel-body">
+	          <h3 id="hostname"></h3>
+	          <div id="content">
+	            <div class="container">
+	            	<div id="placeholder" class="placeholder"></div>
+	            </div>
+	            <div class="control-group">
+	              <span>
+	                <button id="toggle" class="on" value="on">ON</button>
+	              </span>
+	              <span style="float: right">
+	                Refresh rate:
+	                <select id="updateInterval" style="margin: 5px">
+	                  <option value="1">1</option>
+	                  <option value="2" selected>2</option>
+	                  <option value="5">5</option>
+	                  <option value="10">10</option>
+	                  <option value="20">20</option>
+	                  <option value="30">30</option>
+	                  <option value="60">60</option>
+	                  <option value="120">120</option>
+	                </select>
+	                seconds
+	              </span>
+                    </div>
+	          </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="row" id="proxy-status">
         <div class="col-md-6 col-md-offset-3">
           <h2>HAProxy Status</h2>
-	  <h3 id="hostname"></h3>
-	  <div id="content">
-	    <div class="container">
-	    	<div id="placeholder" class="placeholder"></div>
-	    </div>
-	    <div class="control-group">
-	      <span>
-	        <button id="toggle" class="on" value="on">ON</button>
-	      </span>
-	      <span style="float: right">
-	        Refresh rate:
-	        <select id="updateInterval" style="margin: 5px">
-	          <option value="1">1</option>
-	          <option value="2" selected>2</option>
-	          <option value="5">5</option>
-	          <option value="10">10</option>
-	          <option value="20">20</option>
-	          <option value="30">30</option>
-	          <option value="60">60</option>
-	          <option value="120">120</option>
-	        </select>
-	        seconds
-	      </span>
-            </div>
-	  </div>
         </div>
       </div>
       <div class="row">
