@@ -69,8 +69,22 @@
       </div>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <h2>Application Information</h2>
-          <% String variable = System.getenv("OPENSHIFT_APP_UUID"); %>
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    Application Information
+                  </a>
+                </h2>
+              </div>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body">
+                Inside the panel!
+              </div>
+            </div>
+          </div>
           <table class="table table-striped table-bordered table-hover">
             <thead>
               <tr>
