@@ -1,5 +1,5 @@
 $(function() {
-	updateInterval = 1;
+	updateInterval = 2;
 	totalPoints = 600;
 
 	//http://stackoverflow.com/questions/7837456/comparing-two-arrays-in-javascript
@@ -37,7 +37,7 @@ $(function() {
 		this.url = url;
 		this.backoff = 30; //secs
 		this.state = {
-			roof:        10,
+			roof:        100,
 			enabled:     false,
 			startDate:   TimestampNow(),
 			needRefresh: true,
