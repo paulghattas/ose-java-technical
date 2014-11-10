@@ -172,7 +172,7 @@ try {
     }
 } catch (Exception ex) {
 %>
-<img src="../images/no-database.jpg">
+<img src="../images/no-database.jpg" style="display: block; margin: 0 auto;">
 <%
 out.println("Exception: " + ex + ex.getMessage());
 }
