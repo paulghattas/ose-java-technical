@@ -171,7 +171,9 @@ try {
         out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + "<br />");
     }
 } catch (Exception ex) {
-    out.println("Exception: " + ex + ex.getMessage());
+%>
+<img src="../images/no-database.jpg">
+<%
 }
 %>            </p>
           </div>
