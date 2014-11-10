@@ -165,11 +165,11 @@ try {
     DataSource datasource = (DataSource)initialContext.lookup("java:jboss/datasources/MySQLDS");
     result = datasource.getConnection();
     Statement stmt = result.createStatement() ;
-    String query = "select * from names;" ;
-    ResultSet rs = stmt.executeQuery(query) ;
-    while (rs.next()) {
-        out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + "<br />");
-    }
+    //String query = "select * from names;" ;
+    //ResultSet rs = stmt.executeQuery(query) ;
+    //while (rs.next()) {
+    //    out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + "<br />");
+    //}
 } catch (Exception ex) {
 %>
 <img src="../images/no-database.jpg" style="display: block; margin: 0 auto;">
