@@ -174,6 +174,7 @@ try {
 %>
 <img src="../images/no-database.jpg">
 <%
+out.println("Exception: " + ex + ex.getMessage());
 }
 %>            </p>
           </div>
