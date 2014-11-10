@@ -10,6 +10,9 @@ some insight into how apps are deployed in the infrastructure.
 
 ## Future Features
 * MySQL
-* Netflix-y stuff
-* "kill" button
+* Netflix-y stuff 
+  * hystrix for MySQL connection
+  * hystrix for message broker
+* show some information from the EAP cluster
+* "kill" button + watchman
 * Jenkins integration
