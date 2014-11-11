@@ -6,18 +6,25 @@ then
   echo "No database found, but that's OK..."
   exit 0
 else
-  echo 'Checking if users table exists...'
-  TABLES=$(/opt/rh/mysql55/root/usr/bin/mysql -u"$OPENSHIFT_MYSQL_DB_USERNAME"\
+  echo 'Checking if names table exists...'
+  TABLES=$(`which mysql` -u"$OPENSHIFT_MYSQL_DB_USERNAME"\
     -p"$OPENSHIFT_MYSQL_DB_PASSWORD"\
     -h "$OPENSHIFT_MYSQL_DB_HOST"\
     -P "$OPENSHIFT_MYSQL_DB_PORT"\
-    -e "show tables;"\
+    -e "select * from names;"\
     "$OPENSHIFT_APP_NAME")
   
-  # if tables is null then we should create our table and populate it with data
-  if [ -z $TABLES ] 
+  # if exit code was 1 then the table isn't there
+  if [ $? -eq 1 ] 
   then
-    echo 'No tables exist...'
-    # do some mysql command here
+    echo 'No tables exist. Populating database.'
+    `which mysql` -u"$OPENSHIFT_MYSQL_DB_USERNAME"\
+    -p"$OPENSHIFT_MYSQL_DB_PASSWORD"\
+    -h "$OPENSHIFT_MYSQL_DB_HOST"\
+    -P "$OPENSHIFT_MYSQL_DB_PORT"\
+    -e "select * from names;"\
+    "$OPENSHIFT_APP_NAME" < "$OPENSHIFT_REPO_DIR/src/main/resources/database.sql"
+  else
+    "Database is just fine. Nothing to see here..."
   fi
 fi
