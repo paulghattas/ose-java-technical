@@ -3,6 +3,7 @@
 if [ -z "$OPENSHIFT_MYSQL_DB_HOST" ]
 then
   # if there's no database, silently and GRACEFULLY exit
+  echo "No database found, but that's OK..."
   exit 0
 else
   echo 'Checking if users table exists...'
