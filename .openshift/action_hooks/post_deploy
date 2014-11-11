@@ -2,8 +2,8 @@
 
 if [ -z "$OPENSHIFT_MYSQL_DB_HOST" ]
 then
-  # if there's no database, silently exit
-  exit 5
+  # if there's no database, silently and GRACEFULLY exit
+  exit 0
 else
   echo 'Checking if users table exists...'
   TABLES=$(/opt/rh/mysql55/root/usr/bin/mysql -u"$OPENSHIFT_MYSQL_DB_USERNAME"\
