@@ -22,7 +22,6 @@ else
     -p"$OPENSHIFT_MYSQL_DB_PASSWORD"\
     -h "$OPENSHIFT_MYSQL_DB_HOST"\
     -P "$OPENSHIFT_MYSQL_DB_PORT"\
-    -e "select * from names;"\
     "$OPENSHIFT_APP_NAME" < "$OPENSHIFT_REPO_DIR/src/main/resources/database.sql"
   else
     "Database is just fine. Nothing to see here..."
