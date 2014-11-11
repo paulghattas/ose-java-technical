@@ -1,17 +1,22 @@
 #!/bin/bash
 
-echo 'Checking if users table exists...'
-TABLES=$(/opt/rh/mysql55/root/usr/bin/mysql -u"$OPENSHIFT_MYSQL_DB_USERNAME"\
-  -p"$OPENSHIFT_MYSQL_DB_PASSWORD"\
-  -h "$OPENSHIFT_MYSQL_DB_HOST"\
-  -P "$OPENSHIFT_MYSQL_DB_PORT"\
-  -e "show tables;"\
-  "$OPENSHIFT_APP_NAME")
-
-
-if [ -z $TABLES ] 
+if [ -z "$OPENSHIFT_MYSQL_DB_HOST" ]
 then
-  echo 'No tables exist...'
+  # if there's no database, silently exit
+  exit 5
+else
+  echo 'Checking if users table exists...'
+  TABLES=$(/opt/rh/mysql55/root/usr/bin/mysql -u"$OPENSHIFT_MYSQL_DB_USERNAME"\
+    -p"$OPENSHIFT_MYSQL_DB_PASSWORD"\
+    -h "$OPENSHIFT_MYSQL_DB_HOST"\
+    -P "$OPENSHIFT_MYSQL_DB_PORT"\
+    -e "show tables;"\
+    "$OPENSHIFT_APP_NAME")
+  
+  # if tables is null then we should create our table and populate it with data
+  if [ -z $TABLES ] 
+  then
+    echo 'No tables exist...'
+    # do some mysql command here
+  fi
 fi
-
-echo 'Database manipulation complete.'
