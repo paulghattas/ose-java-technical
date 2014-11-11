@@ -24,6 +24,7 @@ else
     -P "$OPENSHIFT_MYSQL_DB_PORT"\
     "$OPENSHIFT_APP_NAME" < "$OPENSHIFT_REPO_DIR/src/main/resources/database.sql"
   else
-    "Database is just fine. Nothing to see here..."
+    echo "Database is just fine. Nothing to see here..."
+    exit 0
   fi
 fi

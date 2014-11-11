@@ -170,16 +170,16 @@ try {
     }
 } catch (Exception ex) {
 %>
-<div>
-  <img src="../images/no-database.jpg" style="display: block; margin: 0 auto;">
-</div>
-<div class="col-md-3">
-  <p>
+          <div>
+            <img src="../images/no-database.jpg" style="display: block; margin: 0 auto;">
+          </div>
+          <div class="col-md-3">
+            <p>
 <%
 out.println("Exception: " + ex + ex.getMessage());
 %>
-  </p>
-</div>
+            </p>
+          </div>
 <%
 }
 %>
