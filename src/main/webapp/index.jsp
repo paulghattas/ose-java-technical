@@ -71,56 +71,42 @@
       </div>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h2 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                    Application Information
-                  </a>
-                </h2>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body">
-                  <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                      <tr>
-                        <th>Env Var</th>
-                        <th>Value</th>
-                      <tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Instance UUID</td>
-                        <td><%= System.getenv("OPENSHIFT_GEAR_UUID") %></td>
-                      </tr>
-                      <tr>
-                        <td>Instance Internal IP</td>
-                        <td><%= System.getenv("OPENSHIFT_JBOSSEAP_IP") %></td>
-                      </tr>
-                      <tr>
-                        <td>Instance Internal Port</td>
-                        <td><%= System.getenv("OPENSHIFT_JBOSSEAP_HTTP_PORT") %></td>
-                      </tr>
-                      <tr>
-                        <td>Instance Memory (Allowed [MB])</td>
-                        <td><%= System.getenv("OPENSHIFT_GEAR_MEMORY_MB") %></td>
-                      </tr>
-                      <tr>
-                        <td>Instance Memory (Used [MB])</td>
-                        <% int mb = 1024*1024; %>
-                        <td><%= (Runtime.getRuntime().totalMemory()) / mb %></td>
-                      </tr>
-                      <tr>
-                        <td>Node (header)</td>
-                        <td><%= request.getHeader("x-forwarded-server") %></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h2>Application Information</h2>
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Env Var</th>
+                <th>Value</th>
+              <tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Instance UUID</td>
+                <td><%= System.getenv("OPENSHIFT_GEAR_UUID") %></td>
+              </tr>
+              <tr>
+                <td>Instance Internal IP</td>
+                <td><%= System.getenv("OPENSHIFT_JBOSSEAP_IP") %></td>
+              </tr>
+              <tr>
+                <td>Instance Internal Port</td>
+                <td><%= System.getenv("OPENSHIFT_JBOSSEAP_HTTP_PORT") %></td>
+              </tr>
+              <tr>
+                <td>Instance Memory (Allowed [MB])</td>
+                <td><%= System.getenv("OPENSHIFT_GEAR_MEMORY_MB") %></td>
+              </tr>
+              <tr>
+                <td>Instance Memory (Used [MB])</td>
+                <% int mb = 1024*1024; %>
+                <td><%= (Runtime.getRuntime().totalMemory()) / mb %></td>
+              </tr>
+              <tr>
+                <td>Node (header)</td>
+                <td><%= request.getHeader("x-forwarded-server") %></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
       <div class="row" id="proxy-status">
@@ -155,9 +141,7 @@
       </div>
       <div class="row" id="database-status">
         <div class="col-md-6 col-md-offset-3">
-          <h2>Database Connection Status</h2>
-          <div>
-            <p>
+          <h2>Database Data</h2>
 <%
 Connection result = null;
 try {
@@ -165,19 +149,40 @@ try {
     DataSource datasource = (DataSource)initialContext.lookup("java:jboss/datasources/MySQLDS");
     result = datasource.getConnection();
     Statement stmt = result.createStatement() ;
-    //String query = "select * from names;" ;
-    //ResultSet rs = stmt.executeQuery(query) ;
-    //while (rs.next()) {
-    //    out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + "<br />");
-    //}
+    String query = "select * from names;" ;
+    ResultSet rs = stmt.executeQuery(query) ;
+%>
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+              <tr>
+            </thead>
+            <tbody>
+<%
+    while (rs.next()) {
+    %>      <tr>
+              <td><%= rs.getString(1) %></td>
+              <td><%= rs.getString(2) + " " + rs.getString(3) %></td>
+            </tr>
+    <%
+    }
 } catch (Exception ex) {
 %>
-<img src="../images/no-database.jpg" style="display: block; margin: 0 auto;">
+<div>
+  <img src="../images/no-database.jpg" style="display: block; margin: 0 auto;">
+</div>
+<div class="col-md-3">
+  <p>
 <%
 out.println("Exception: " + ex + ex.getMessage());
+%>
+  </p>
+</div>
+<%
 }
-%>            </p>
-          </div>
+%>
         </div>
       </div>
     </div>
